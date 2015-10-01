@@ -42,7 +42,8 @@ The file on the target to edit.
 A very simple object notation for the location of the property to edit,
  and its new value.
 
-Mandatory automatic conversion will be applied. Supported values:
+Mandatory automatic conversion will be applied. Supported conversions are
+listed below.  Everything else will be left as a string:
 
  * integers (``5``, ``-17``)
  * ``true`` / ``false``
