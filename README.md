@@ -61,10 +61,10 @@ For the example JSON document ``/foo/bar.json`` containing:
 ...you can run an invocation like:
 ````
  - ghetto_json:
-    path=/foo/bar.json
-    a=7
-    b.c=yellow
-    b.d=unset
+     path=/foo/bar.json
+     a=7
+     b.c=yellow
+     b.d=unset
 ````
 
 ...and the file will be left looking like:
