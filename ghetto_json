@@ -4,6 +4,11 @@ import json
 import sys
 import shlex
 
+try:
+    import commentjson
+    json_load = commentjson.load
+except ImportError:
+    json_load = json.load
 
 def main(params_list):
     params = dict(x.split("=", 2) for x in params_list)
@@ -11,7 +16,7 @@ def main(params_list):
     changed = False
 
     with open(path) as f:
-        obj = json.load(f)
+        obj = json_load(f)
         for (key, target) in params.items():
             parts = key.split('.')
             ref = obj
