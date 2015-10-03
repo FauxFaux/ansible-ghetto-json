@@ -8,6 +8,11 @@ ghetto_json lets you make some types of edits to JSON files, and remains simple 
   it's hopefully easier just to extend than to switch to a different module, and you won't feel
   too guilty just copy-pasting it into your codebase.
 
+If [commentjson](https://pypi.python.org/pypi/commentjson/) is available, it will be used to
+ *read* the file, but comments will be lost on save.  This is useful for making edits to default
+ configurations shipped with some applications; where the application itself supports comments in
+ JSON, but they're not required.
+
 
 Installation
 ------------
@@ -25,6 +30,9 @@ Make in-place changes to simple JSON documents,
 
 Requirements
 ------------
+
+[commentjson](https://pypi.python.org/pypi/commentjson/) will be used, if available,
+ but is explictly not required.
 
 Python 2.7 may be required for some ``shlex`` functionality
  (like working Unicode), which you probably don't care about.
