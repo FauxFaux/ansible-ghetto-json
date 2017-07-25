@@ -15,6 +15,10 @@ def main(params_list):
     path = params.pop('path')
     changed = False
 
+    for key in params.keys():
+      if key.startswith('_ansible_'):
+        params.pop(key)
+
     with open(path) as f:
         obj = json_load(f)
         for (key, target) in params.items():
