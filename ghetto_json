@@ -11,7 +11,7 @@ except ImportError:
     json_load = json.load
 
 def main(params_list):
-    params = dict(x.split("=", 2) for x in params_list)
+    params = dict(x.split("=", 1) for x in params_list)
     path = params.pop('path')
     changed = False
 
