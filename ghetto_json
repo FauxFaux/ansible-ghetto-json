@@ -3,6 +3,7 @@
 import json
 import sys
 import shlex
+import os
 
 try:
     import commentjson
@@ -12,7 +13,7 @@ except ImportError:
 
 def main(params_list):
     params = dict(x.split("=", 1) for x in params_list)
-    path = params.pop('path')
+    path = os.path.expanduser(params.pop('path'))
     changed = False
 
     for key in params.keys():
